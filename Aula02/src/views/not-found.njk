@@ -1,0 +1,20 @@
+{% extends 'layout.njk' %}
+
+<head>
+{% block head %}
+  <title>Página não encontrada</title>
+{% endblock %}
+<head>
+
+<body>
+  {% block content %}
+
+  <div id="wrapper" class="not-found">
+    <img src="https://image.flaticon.com/icons/svg/1488/1488096.svg" alt="notfound"/>
+    <h1>ERROR 404</h1>
+    <h4>A página não foi encontrada.</h4>
+    <p>Verifique se a URL está correta.</p>
+  </div>
+
+  {% endblock%}
+</body>

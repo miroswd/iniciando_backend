@@ -1,0 +1,35 @@
+{% extends "layout.njk" %}
+
+<head>
+  <!-- Instruções para o navegador -->
+  {% block head %}
+  <title>Miroswd</title>
+  {% endblock %}
+
+</head>
+
+<body>
+  {% block content %}
+  <header>
+    <!-- Parte inicial do site -->
+    <div class="links">
+      <!-- Agrupa elementos -->
+      <a href="mailto:oi@rocketseat.com.br">Email</a>
+      <a href="/rocketseat">Rocketseat</a>
+    </div>
+  </header>
+
+  <div id="wrapper">
+    <img src="https://avatars1.githubusercontent.com/u/54915150?s=460&v=4" alt="miroswd"/>
+    <h1>{{user.name}}</h1>
+    <h4>{{user.role}}</h4>
+    <p>{{user.description}}</p>
+  </div>
+
+  <div id="links-footer" class="links">
+    {% for link in user.links %}
+      <a href="{{link.url}}" target="_blank">{{link.name}}</a>
+    {% endfor %}
+  </div>
+  {% endblock %}
+</body>
