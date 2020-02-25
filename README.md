@@ -9,8 +9,7 @@
   <li>Nunjucks - Template Engine</li>
 </ul>
 
-
-<h6>Not Found</h6>
-<p style="text-align:center">
-  <img src="https://github.com/miroswd/iniciando_backend/blob/master/assets/not-found.png" alt="Not found image">
-</p>
+```
+  npm install # Instala as dependências
+  npm start # Inicializa o server
+```

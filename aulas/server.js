@@ -2,6 +2,8 @@ const express = require('express'); // Importa o express debtro de uma const
 const nunjucks = require('nunjucks');
 
 const server = express(); // Executa a variável expess
+const videos = require('./data') // ./ -> referencia ao diretório atual
+
 
 server.use(express.static('public')) // Usando arquivos estáticos
 
@@ -13,7 +15,8 @@ server.set("view engine", "njk")
 nunjucks.configure("views", {
          // Pasta que irá salvar os arquivos
          // configurações
-    express:server // o que vai usar:variável
+    express:server, // o que vai usar:variável
+    autoescape:false // Permite imprimir o html
 })
 
 
@@ -21,11 +24,33 @@ nunjucks.configure("views", {
 server.get('/', function(req,res){
     // req - request  -> listen
     // res - response -> return
-    return res.render("about") // Busca o about.html, não precisa passar o njk/html, pois já foi configurado no nunjucks
+
+    const about = {
+        avatar_url:"https://avatars1.githubusercontent.com/u/54915150?s=460&v=4",
+        name: "Miroswd",
+        role:"Desenvolvedor Frontend/Backend",
+        description:'HTML, CSS, JavaScript, Node.JS, ReactJS e React Native. Estudando na <a href="https://rocketseat.com.br" target="_blank">Rocketseat</a>',
+        links: [
+            {
+                name: "Github",
+                url:'https://github.com/miroswd'
+            },
+            {
+                name: "Linkedin",
+                url:'https://www.linkedin.com/in/altamir-santos-874368146/'
+            },
+            {
+                name: "Behance",
+                url:'https://www.behance.net/altamirherc75c'
+            }
+        ]
+    }
+
+    return res.render("about",{about}) // Busca o about.html, não precisa passar o njk/html, pois já foi configurado no nunjucks
 });
 
 server.get('/classes', function(req,res){
-    return res.render("classes")
+    return res.render("classes",{items:videos}) // Passando os dados como variável item, para o classes
 })
 
 

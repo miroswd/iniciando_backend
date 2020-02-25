@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout.njk" %}
 
 {% block head %}
 <title>Aulas</title>
@@ -15,97 +15,21 @@ rel="stylesheet"> <!--https://google.github.io/material-design-icons/-->
 
 <section class="cards">
 
-  <!--NEW CARD-->
-  <div class="card" id="2alg7MQ6_sI">
+  {% for item in items %}
+  <div class="card" id="{{item.id}}">
     <div class="card-image-container">
-      <img src="https://img.youtube.com/vi/2alg7MQ6_sI/maxresdefault.jpg" alt="Vídeo Aula">
+      <img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" alt="Imagem de {{item.title}}">
     </div>
     <div class="card-content">
-      <p>Como usar Git e Github na prática: Guia para iniciantes | Mayk Brito</p>
+      <p>{{item.title}}</p>
     </div>
 
     <div class="card-info">
-      <p>33min</p>
-      <p class="card-price">Free</p>
+      <p>{{item.duration}}</p>
+      <p class="card-price">{{item.price}}</p>
     </div>
   </div>
-
-  <!--NEW CARD-->
-  <div class="card" id="vqrjFnq3-uo">
-    <div class="card-image-container">
-      <img src="https://img.youtube.com/vi/vqrjFnq3-uo/maxresdefault.jpg" alt="Vídeo Aula">
-    </div>
-    <div class="card-content">
-      <p>Criando Player de Áudio com Javascript | Mayk Brito</p>
-    </div>
-
-    <div class="card-info">
-      <p>1h45min</p>
-      <p class="card-price">Free</p>
-    </div>
-  </div>
-
-  <!--NEW CARD-->
-  <div class="card" id="HN1UjzRSdBk">
-    <div class="card-image-container">
-      <img src="https://img.youtube.com/vi/HN1UjzRSdBk/maxresdefault.jpg" alt="Vídeo Aula">
-    </div>
-    <div class="card-content">
-      <p>Desvendando o CSS Grid na prática | Mayk Brito</p>
-    </div>
-
-    <div class="card-info">
-      <p>36min</p>
-      <p class="card-price">Free</p>
-    </div>
-  </div>
-
-  <!--NEW CARD-->
-  <div class="card" id="ghTrp1x_1As">
-    <div class="card-image-container">
-      <img src="https://img.youtube.com/vi/ghTrp1x_1As/maxresdefault.jpg" alt="Vídeo Aula">
-    </div>
-    <div class="card-content">
-      <p>O que é API? REST e RESTful? | Mayk Brito</p>
-    </div>
-
-    <div class="card-info">
-      <p>33min</p>
-      <p class="card-price">Free</p>
-    </div>
-  </div>
-
-  <!--NEW CARD-->
-  <div class="card" id="GSqR2i-Pq6o">
-    <div class="card-image-container">
-      <img src="https://img.youtube.com/vi/GSqR2i-Pq6o/maxresdefault.jpg" alt="Vídeo Aula">
-    </div>
-    <div class="card-content">
-      <p>Desvendando a variável this no JavaScript | Mayk Brito</p>
-    </div>
-
-    <div class="card-info">
-      <p>48min</p>
-      <p class="card-price">Free</p>
-    </div>
-  </div>
-
-  <!--NEW CARD-->
-  <div class="card" id="GykTLqODQuU">
-    <div class="card-image-container">
-      <img src="https://img.youtube.com/vi/GykTLqODQuU/maxresdefault.jpg" alt="Vídeo Aula">
-    </div>
-    <div class="card-content">
-      <p>Formulário Animado com JS puro e CSS Animation | Mayk Brito</p>
-    </div>
-
-    <div class="card-info">
-      <p>57min</p>
-      <p class="card-price">Free</p>
-    </div>
-  </div>
-
-
+  {% endfor %}
 
 </section>
 
