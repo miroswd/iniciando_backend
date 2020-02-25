@@ -5,7 +5,7 @@ const server = express();
 
 server.use(express.static("public"))
 
-server.set("view engine","html")
+server.set("view engine","njk")
         // Qual o motor de view == html
 
 nunjucks.configure("views", {
@@ -21,6 +21,10 @@ server.get('/', function(req,res){
 
 server.get('/conteudos', function(req,res){
     return res.render('conteudos')
+})
+
+server.use(function(req,res){
+    res.status(404).render('not-found')
 })
 
 
