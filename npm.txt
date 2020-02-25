@@ -1,0 +1,12 @@
+// Instalando dependências
+
+Utilizando NPM - Node Package Manager
+    - Busca repositórios e inseri no nosso projeto
+
+>>> npm init -y # Inicia o npm sem fazer perguntas
+>>> npm install express # auxilia na construção do servidor
+>>> npm install -D nodemon # Reinicia o servidor, quando houver alterações
+
+- D -> Instala em dependências de desenvolvimentos
+
+>>> npm install nunjucks # Template engine
