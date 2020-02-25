@@ -10,8 +10,7 @@
 </ul>
 
 
-<h5>Not Found</h5>
-<h6>Exibida toda vez que não achar uma página</h6>
+<h6>Not Found</h6>
 <p style="text-align:center">
   <img src="https://github.com/miroswd/iniciando_backend/blob/master/assets/not-found.png" alt="Not found image">
 </p>
