@@ -16,7 +16,8 @@ nunjucks.configure("views", {
          // Pasta que irá salvar os arquivos
          // configurações
     express:server, // o que vai usar:variável
-    autoescape:false // Permite imprimir o html
+    autoescape:false, // Permite imprimir o html
+    noCache: true, // Não guarda a versão
 })
 
 
@@ -51,6 +52,23 @@ server.get('/', function(req,res){
 
 server.get('/classes', function(req,res){
     return res.render("classes",{items:videos}) // Passando os dados como variável item, para o classes
+})
+
+server.get('/video', function(req,res){
+    const id = req.query.id;
+    const video = videos.find(function(video){
+        // if (video.id == id ){
+        //     console.log(video)
+        //     return true
+        //     }
+        return video.id == id
+    }) 
+        
+        if(!video) {
+            return res.send("Video not found")
+        }
+
+        return res.render("video", {item:video})
 })
 
 

@@ -17,8 +17,11 @@ rel="stylesheet"> <!--https://google.github.io/material-design-icons/-->
 
   {% for item in items %}
   <div class="card" id="{{item.id}}">
-    <div class="card-image-container">
+    <div class="card-image-container {{'featured-wrapper' if item.featured}}"> <!--Se featured for true, então acrescentar uma classe-->
       <img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" alt="Imagem de {{item.title}}">
+      {% if item.featured %}
+        <div class="featured">Featured</div>
+      {% endif %}   
     </div>
     <div class="card-content">
       <p>{{item.title}}</p>
@@ -33,7 +36,7 @@ rel="stylesheet"> <!--https://google.github.io/material-design-icons/-->
 
 </section>
 
-<div class="modal-overlay">
+{# <div class="modal-overlay">
   <div class="modal">
     <a class="close-modal">
       <i class="material-icons">close</i>
@@ -46,11 +49,8 @@ rel="stylesheet"> <!--https://google.github.io/material-design-icons/-->
       <iframe src="" frameborder="0"></iframe>
     </div>
   </div>
-</div>
+</div> #}
 
 <script src="scripts.js"></script>
-</body>
-
-</html>
 
 {% endblock %}
