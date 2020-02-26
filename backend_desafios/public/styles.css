@@ -209,10 +209,10 @@ header {
 }
 
 .modal {
-  margin: 300px auto;
+  margin: 198px auto;
 
-  width: 60%;
-  height: 55%;
+  width: 70%;
+  height: 65%;
   background-color: #fff;
 
   position: relative;
@@ -268,3 +268,60 @@ iframe {
 }
 
 
+/*=== DESCRIPTION === */
+
+.course {
+  margin: 0 auto;
+  width: 750px;
+  height: 450px;
+  position: relative;
+
+  border-radius: 20px;
+  background-color: #0F1111;
+  margin-top: 180px;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.course#starter {
+  border: 1.5px solid var(--rocketseat);
+}
+
+.course#starter:hover {
+  margin-top: 185px;
+  box-shadow: 0 0 15px 0 var(--rocketseat);
+}
+
+.course#launchbase {
+  border: 1.5px solid var(--launchbase);
+}
+
+.course#launchbase:hover {
+  margin-top: 185px;
+  box-shadow: 0 0 15px 0 var(--launchbase);
+}
+
+
+.course#gostack {
+  border: 1.5px solid var(--gostack);
+}
+
+.course#gostack:hover {
+  margin-top: 185px;
+  box-shadow: 0 0 15px 0 var(--gostack);
+}
+
+.course .logo {
+  height: 220px;
+  margin-top: 70px;
+
+}
+
+.course .description {
+  margin:40px auto ;
+  width: 500px;
+  color: #ddd;
+  font-weight: 500;
+  font-size: 16px;
+}

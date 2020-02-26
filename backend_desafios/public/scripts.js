@@ -1,6 +1,7 @@
 const modalOverlay = document.querySelector(".modal-overlay")
 const modal = document.querySelector('.modal')
 const cards = document.querySelectorAll(".card")
+const course = document.querySelector('.course')
 
 // Icons
 
@@ -9,12 +10,21 @@ const fullscreen = document.querySelector('.fullscreen')
 
 for (let card of cards ){
   card.addEventListener("click",function(){
-    modalOverlay.classList.add('active');
-
+    
     const webId = card.getAttribute("id")
-    modalOverlay.querySelector('iframe').src = `https://rocketseat.com.br/${webId}`
+    window.location.href = `courses/${webId}`
   })
 }
+
+course.addEventListener('click', function(){
+  // Pegando o link
+  console.log('BOmmmmmmmmmmmmmmmm')
+  const idLink =  course.getAttribute('id')
+  modalOverlay.classList.add('active');
+
+  modalOverlay.querySelector('iframe').src = `https://rocketseat.com.br/${idLink}`
+})
+
 
 modalOverlay.querySelector('.close-modal').addEventListener('click',function(){
   modalOverlay.classList.remove('active');
@@ -22,7 +32,6 @@ modalOverlay.querySelector('.close-modal').addEventListener('click',function(){
   fullscreen.classList.remove('disable')
   exit.classList.remove('active')
 })
-
 /*Expandindo o modal*/
 document.querySelector(".fullscreen").addEventListener("click",function(){
   if (!(modal.classList.contains('fullscreen'))){
@@ -31,7 +40,6 @@ document.querySelector(".fullscreen").addEventListener("click",function(){
     exit.classList.add('active')
   }
 })
-
 document.querySelector('.exit').addEventListener('click',function(){
   if (modal.classList.contains('fullscreen')){
     modal.classList.remove('fullscreen')

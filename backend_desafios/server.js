@@ -57,6 +57,21 @@ server.get('/conteudos', function(req,res){
     return res.render('conteudos',{items:data})
 })
 
+server.get('/courses/:id',function(req,res){
+    const id = req.params.id
+    const course = data.find(function(course){
+        if(course.id == id){
+            return true
+        }
+    })
+
+    if(!course){
+        return res.status(404).render('not-found')
+    }
+    
+    return res.render('descricao',{course})
+})
+
 server.use(function(req,res){
     res.status(404).render('not-found')
 })
